@@ -17,7 +17,6 @@ public class HomeTaskPractice {
             } else {
                 break;
             }
-
         }
     }
 
@@ -37,8 +36,6 @@ public class HomeTaskPractice {
             if (i == 2) {
                 System.out.println("Вы проиграли.");
             }
-
         }
-//        System.out.println(randomNum);
     }
 }
