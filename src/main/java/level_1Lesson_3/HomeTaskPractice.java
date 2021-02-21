@@ -18,6 +18,7 @@ public class HomeTaskPractice {
                 break;
             }
         }
+        sc.close();
     }
 
     public static void guessNumber() {

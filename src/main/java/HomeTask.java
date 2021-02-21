@@ -16,8 +16,8 @@ public class HomeTask {
 
         String str = "In the beginning it was";
 
-        //System.out.println(test_6(2));
-        year(1000);
+        System.out.println(test_6(-2));
+        //test_6(1000);
 
 
     }
@@ -47,11 +47,7 @@ public class HomeTask {
 
     //6. Проверка целого числа на положительное/отрицательное и возвратом false или true
     public static boolean test_6(int num) {
-        if (num >= 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return  !(num >= 0);
     }
 
     //7. Вывод приветствия с именем
