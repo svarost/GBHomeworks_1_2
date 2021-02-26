@@ -191,7 +191,6 @@ public class MyTicTacToe {
         System.out.println();
     }
 
-
     private static void initMap(int size) {
         map = new char[size][size];
         for (int i = 0; i < size; i++) {
