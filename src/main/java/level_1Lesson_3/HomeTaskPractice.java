@@ -7,11 +7,26 @@ public class HomeTaskPractice {
     public static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+        int answer = 10;
         while (true) {
             guessNumber();
             System.out.println();
             System.out.println("Повторить игру еще раз? 1 - да / 0 - нет.");
-            int answer = sc.nextInt();
+            while (true) {
+                if (sc.hasNextInt()) {
+                    answer = sc.nextInt();
+                    if (answer != 0 && answer != 1) {
+                        System.out.println("Повторить игру еще раз? 1 - да / 0 - нет.");
+                        continue;
+                    } else {
+                        break;
+                    }
+                } else {
+                    sc.nextLine();
+                    System.out.println("Повторить игру еще раз? 1 - да / 0 - нет.");
+                    continue;
+                }
+            }
             if (answer == 0) {
                 break;
             }
