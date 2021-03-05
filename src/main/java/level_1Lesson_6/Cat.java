@@ -1,20 +1,20 @@
 package level_1Lesson_6;
 
 public class Cat extends Animals {
-    private int runLim = 200;
-    int catCount = 0;
+    private final int RUN_LIM = 200;
+    static int count = 0;
 
     public Cat(String name) {
         super(name);
-        catCount++;
+        count++;
     }
 
     @Override
     public void run(int barrier) {
-        if (barrier < runLim) {
+        if (barrier < RUN_LIM) {
             System.out.println(name + " пробежал " + barrier + " м.");
         } else {
-            System.out.println(name + " пробежал всего " + runLim + " м.");
+            System.out.println(name + " пробежал всего " + RUN_LIM + " м.");
         }
     }
 
@@ -24,6 +24,7 @@ public class Cat extends Animals {
     }
 
     public void count() {
-        System.out.println("Всего кошек: " + catCount);
+        System.out.println("Всего кошек: " + this.count);
+//        super.count();
     }
 }

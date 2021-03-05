@@ -2,18 +2,18 @@ package level_1Lesson_6;
 
 public abstract class Animals {
     String name;
-    int animalCount = 1;
+    private static int count = 0;
 
     public Animals(String name) {
         this.name = name;
-        animalCount++;
+        this.count++;
     }
 
     public abstract void run(int barrier);
     public abstract void swim(int barrier);
 
-    public void animalsCount() {
-        System.out.println("Всего животных: " + animalCount);
+    public void count() {
+        System.out.println("Всего животных: " + count);
     }
 
 }
