@@ -12,8 +12,9 @@ public abstract class Animals {
     public abstract void run(int barrier);
     public abstract void swim(int barrier);
 
-    public void count() {
+    public void countAnimal() {
         System.out.println("Всего животных: " + count);
     }
+
 
 }

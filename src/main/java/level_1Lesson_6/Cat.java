@@ -24,7 +24,11 @@ public class Cat extends Animals {
     }
 
     public void count() {
-        System.out.println("Всего кошек: " + this.count);
-//        super.count();
+        System.out.println("Всего кошек: " + count);
+    }
+
+    @Override
+    public void countAnimal() {
+        super.countAnimal();
     }
 }

@@ -27,7 +27,12 @@ public class Dog extends Animals {
             System.out.println(name + " проплыл всего " + SWIM_LIM + " м.");
         }
     }
+
     @Override
+    public void countAnimal() {
+        super.countAnimal();
+    }
+
     public void count() {
         System.out.println("Всего собак: " + count);
     }

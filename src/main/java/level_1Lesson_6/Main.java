@@ -6,6 +6,7 @@ public class Main {
         Dog dog1 = new Dog("Байкал");
         Animals cat2 = new Cat("Барсик");
         Animals cat3 = new Cat("Том");
+        Dog dog2 = new Dog("Джек");
         cat1.run(150);
         cat1.swim(1);
         dog1.run(600);
@@ -13,6 +14,8 @@ public class Main {
         cat2.run(20);
         dog1.count();
         cat1.count();
-        cat2.count();
+        cat2.countAnimal();
+        dog2.countAnimal();
+
     }
 }
