@@ -26,10 +26,11 @@ public class MyWindow extends JFrame {
                     MainClass.map[0][0] = X_DOT;
                     butt_1.setLabel(String.valueOf(X_DOT));
                     System.out.println(MainClass.map[0][0]);
+                    butt_1.enable(false);
                 }
             }
         });
-        butt_1.enable();
+
 
         JButton butt_2 = new JButton(String.valueOf(item[1][0]));
         add(butt_2);

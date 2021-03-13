@@ -24,8 +24,7 @@ public class MyWindow_2 extends JFrame {
                         System.out.println("OK");
                         if (MainClass.map[0][0] == MainClass.EMPTY_DOT) {
                             MainClass.map[0][0] = MainClass.X_DOT;
-                            etLabel(String.valueOf(MainClass.X_DOT));
-                            buttons[k] = 0;
+//                            buttons[k]
                             System.out.println(MainClass.map[0][0]);
                         }
                     }
