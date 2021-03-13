@@ -4,11 +4,11 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class MainClass {
-    private static char [][] map;
+    public static char [][] map;
     private static final int SIZE = 3;
-    private static final char EMPTY_DOT = '•';
-    private static final char X_DOT = 'X';
-    private static final char O_DOT = 'O';
+    public static final char EMPTY_DOT = '•';
+    public static final char X_DOT = 'X';
+    public static final char O_DOT = 'O';
     private static int COUNT_CHIP;
 
 
@@ -16,6 +16,7 @@ public class MainClass {
 //        String[][] item = {{"", "X", "O", "O"}, {"X", "", "O", "O"}, {"O", "X", "", "O"}, {"O", "X", "", "O"}};
         initMap(SIZE);
         MyWindow myWindow = new MyWindow(map);
+        MyWindow_2 myWindow_2 = new MyWindow_2(map);
 
 
 
