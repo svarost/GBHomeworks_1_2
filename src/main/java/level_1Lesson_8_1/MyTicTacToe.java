@@ -1,32 +1,19 @@
-package level_1Lesson_8;
-
+package level_1Lesson_8_1;
 import java.util.Random;
-import java.util.Scanner;
 
-public class MainClass {
-    public static char [][] map;
-    private static final int SIZE = 3;
-    public static final char EMPTY_DOT = '•';
-    public static final char X_DOT = 'X';
-    public static final char O_DOT = 'O';
-    private static int COUNT_CHIP;
+public class MyTicTacToe {
+    private char [][] map;
+    static int SIZE = 3;
+    private final char EMPTY_DOT = '•';
+    private final char X_DOT = 'X';
+    private final char O_DOT = 'O';
+    private int COUNT_CHIP = 3;
 
-
-    public static void main(String[] args) {
-//        String[][] item = {{"", "X", "O", "O"}, {"X", "", "O", "O"}, {"O", "X", "", "O"}, {"O", "X", "", "O"}};
-        initMap(SIZE);
-        MyWindow myWindow = new MyWindow(map);
-//        MyWindow_2 myWindow_2 = new MyWindow_2(map);
-
-
-
-
-
-
+    public char[][] getMap() {
+        return map;
     }
 
-
-    private static boolean checkDraw() {
+    public boolean checkDraw() {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
                 if (map[i][j] == EMPTY_DOT) {
@@ -37,7 +24,7 @@ public class MainClass {
         return true;
     }
 
-    private static void computerTurn() {
+    public Step computerTurn() {
         int xCoordinate;
         int yCoordinate;
         do {
@@ -46,9 +33,10 @@ public class MainClass {
             yCoordinate = random.nextInt(SIZE);
         } while (!isValidCell(xCoordinate, yCoordinate));
         map[yCoordinate][xCoordinate] = O_DOT;
+        return new Step(xCoordinate, yCoordinate);
     }
 
-    private static boolean checkWin(char aChar) {
+    public boolean checkWin(char aChar) {
         int chipHorizon = 0;
         int chipVertical = 0;
         int backSlash = 0;
@@ -125,52 +113,42 @@ public class MainClass {
         return false;
     }
 
-//    private static void humanTurn() {
-//        sc = new Scanner(System.in);
-//        int xCoordinate = -1;
-//        int yCoordinate = -1;
-//        do {
-//            System.out.println("Введите координаты в формате X и Y: ");
-//            if (sc.hasNextInt()) {
-//                xCoordinate = sc.nextInt() - 1;
-//            }
-//            if (sc.hasNextInt()) {
-//                yCoordinate = sc.nextInt() - 1;
-//            }
-//            sc.nextLine();
-//        } while (!isValidCell(xCoordinate, yCoordinate));
-//        map[yCoordinate][xCoordinate] = X_DOT;
-//    }
+    public void humanTurn(int x, int y) {
+        map[y][x] = X_DOT;
+    }
 
-    private static boolean isValidCell(int x, int y) {
+    public boolean isValidCell(int x, int y) {
         if (x < 0 || x > SIZE - 1 || y < 0 || y > SIZE - 1) {
             return false;
         }
         return (map[y][x] == EMPTY_DOT);
     }
 
-//    private static void printMap(int size) {
-//        System.out.print("  ");
-//        for (int i = 0; i < SIZE; i++) {
-//            System.out.print((i + 1) + " ");
-//        }
-//        System.out.println();
-//        for (int i = 0; i < SIZE; i++) {
-//            System.out.print(i + 1 + " ");
-//            for (int j = 0; j < SIZE; j++) {
-//                System.out.print(map[i][j] + " ");
-//            }
-//            System.out.println();
-//        }
-//        System.out.println();
-//    }
+    public void printMap() {
+        System.out.print("  ");
+        for (int i = 0; i < SIZE; i++) {
+            System.out.print((i + 1) + " ");
+        }
+        System.out.println();
+        for (int i = 0; i < SIZE; i++) {
+            System.out.print(i + 1 + " ");
+            for (int j = 0; j < SIZE; j++) {
+                System.out.print(map[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+    }
 
-    private static void initMap(int size) {
-        map = new char[size][size];
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
+    public void initMap() {
+        map = new char[SIZE][SIZE];
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
                 map[i][j] = EMPTY_DOT;
             }
         }
     }
 }
+
+
+
